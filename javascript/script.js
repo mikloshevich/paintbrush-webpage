@@ -41,7 +41,7 @@ burger.addEventListener('click', ()=> {
 window.onscroll = ()=> {
     if (navBar.classList.contains('active') && burger.classList.contains('js-x')) {
         timeline2.reverse();
-        navBar.classList.remove('active');
+        // navBar.classList.remove('active');
         burger.classList.remove('js-x');
     }
 }
