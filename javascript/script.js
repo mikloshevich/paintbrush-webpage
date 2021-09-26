@@ -11,13 +11,14 @@ burger.addEventListener('mouseenter', ()=> {
         return
     }
     timeline1
-        .to('.burger', {scale: 1.5, transformOrigin: 'center', repeat: 1, yoyo: true})
+        .to('.burger', {scaleX: 0.8, scaleY: 1.2, transformOrigin: 'center', repeat: 1, yoyo: true})
 });
 
 timeline2
     .to(".line2", {duration: 0.1, scaleX: 0, transformOrigin: 'center'}, 0)
-    .to(".line1", {transformOrigin: 'center', y: 10}, "slide")
-    .to(".line3", {transformOrigin: 'center', y: -10}, "slide")
+    .to(".line1", {scaleX: 2, transformOrigin: 'left', y: 10}, "slide")
+    .to(".line3", {scaleX: 2, transformOrigin: 'right', y: -10}, "slide")
+    .to(".burger", {rotation: 180})
     .to(".line1", {rotation: 45, transformOrigin: 'center'}, "cross")
     .to(".line3", {rotation: -45, transformOrigin: 'center'}, "cross")
 
@@ -31,6 +32,14 @@ burger.addEventListener('click', ()=> {
     timeline2.reversed() ? timeline2.play() : timeline2.reverse();
 
 });
+
+window.onscroll = ()=> {
+    if (navBar.classList.contains('active') && burger.classList.contains('js-x')) {
+        timeline2.reverse();
+        navBar.classList.remove('active');
+        burger.classList.remove('js-x');
+    }
+}
 
 /*Testimonials Slider*/
 const rBtn = document.querySelector('.testimonial-btn.right');
