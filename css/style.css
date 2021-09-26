@@ -736,6 +736,7 @@ address {
         width: 100%;
         z-index: 10;
         padding: 20px 0 40px;
+        -webkit-clip-path: url(#nav-clip);
         clip-path: url(#nav-clip);
         box-shadow: inset 1px 3px 15px hsla(0, 0%, 100%, 1.0);
     }
