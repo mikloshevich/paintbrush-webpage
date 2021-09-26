@@ -102,7 +102,7 @@ address {
 
 .logo {
     max-width: 308px;
-    margin-right: 60px;
+    margin-right: 70px;
     flex-shrink: 10;
 }
 
@@ -704,7 +704,7 @@ address {
 
 @media screen and (max-width: 878px) {
     .logo {
-        max-width: 250px;
+        max-width: 150px;
         flex-shrink: 20;
     }
     .header nav {
