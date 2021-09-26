@@ -18,12 +18,17 @@ timeline2
     .to(".line2", {duration: 0.1, scaleX: 0, transformOrigin: 'center'}, "slide")
     .to(".line1", {scaleX: 2, transformOrigin: 'left', y: 10}, "slide")
     .to(".line3", {scaleX: 2, transformOrigin: 'right', y: -10}, "slide")
-    .to(".burger", {rotation: 180})
+    .to(".burger", {rotation: 180, y: -8})
+    .call(toggleNavbar)
     .to(".line1", {rotation: 45, transformOrigin: 'center'}, "cross")
     .to(".line3", {rotation: -45, transformOrigin: 'center'}, "cross")
 
-burger.addEventListener('click', ()=> {
+function toggleNavbar() {
     navBar.classList.toggle('active');
+}
+
+burger.addEventListener('click', ()=> {
+    // toggleNavbar();
 
     if(timeline1.isActive()) {
         timeline1.progress(1);
