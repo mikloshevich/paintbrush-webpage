@@ -219,16 +219,15 @@ address {
 
 .hero-icon svg {
     width: 48px;
-    /* fill: red; */
-    /* transform-origin: center;
-    animation: iconPulse 1.0s linear infinite alternate; */
 }
 
 @keyframes iconPulse {
     0% {
+        filter: drop-shadow(3px 3px 2px hsla(0, 0%, 0%, 0.5));
         transform: scale(0.9, 0.9);
     }
     100% {
+        filter: drop-shadow(3px 3px 3.5px hsla(0, 0%, 0%, 0.5));
         transform: scale(1.1, 1.1);
     }
 }
