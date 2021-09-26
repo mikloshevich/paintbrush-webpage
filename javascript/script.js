@@ -15,7 +15,7 @@ burger.addEventListener('mouseenter', ()=> {
 });
 
 timeline2
-    .to(".line2", {duration: 0.1, scaleX: 0, transformOrigin: 'center'}, 0)
+    .to(".line2", {duration: 0.1, scaleX: 0, transformOrigin: 'center'}, "slide")
     .to(".line1", {scaleX: 2, transformOrigin: 'left', y: 10}, "slide")
     .to(".line3", {scaleX: 2, transformOrigin: 'right', y: -10}, "slide")
     .to(".burger", {rotation: 180})
