@@ -570,8 +570,9 @@ address {
 
 .contacts-info-item {
     display: flex;
-    align-items: end;
+    align-items: center;
     margin-bottom: 30px;
+    padding: 4px 0;
     color: #fff;
 }
 
@@ -783,6 +784,14 @@ address {
 }
 
 @media screen and (max-width: 735px) {
+    .about-title {
+        width: 600px
+    }
+
+    .about-img {
+        align-self: center;
+    }
+
     .footer-right {
         width: 50%;
     }
@@ -824,12 +833,17 @@ address {
     .about-inner {
         flex-direction: column;
         align-items: center;
+        justify-content: space-evenly
     }
 
     .about-info {
         margin-right: 0;
         margin-bottom: 30px;
         width: 80%
+    }
+
+    .about-title {
+        width: 100%;
     }
 
     .about-img {
@@ -862,7 +876,7 @@ address {
 
     .testimonial-img {
         margin-right: 0;
-        width: 80%
+        width: 76%
     }
 
     .testimonial-name {
@@ -875,6 +889,10 @@ address {
         font-size: 24px;
         text-align: center;
         margin-left: 0;
+    }
+
+    .testimonial-btns {
+        bottom: 20px
     }
 
     .contacts-inner {
@@ -919,7 +937,7 @@ address {
     }
 
     .about-title {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .about-text {
