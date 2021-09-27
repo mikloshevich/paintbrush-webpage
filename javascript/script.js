@@ -18,17 +18,32 @@ timeline2
     .to(".line2", {duration: 0.1, scaleX: 0, transformOrigin: 'center'}, "slide")
     .to(".line1", {scaleX: 2, transformOrigin: 'left', y: 10}, "slide")
     .to(".line3", {scaleX: 2, transformOrigin: 'right', y: -10}, "slide")
-    .call(toggleNavbar)
+    .call(tmToggleActive)
     .to(".burger", {rotation: 180, y: -8})
     .to(".line1", {rotation: 45, transformOrigin: 'center'}, "cross")
     .to(".line3", {rotation: -45, transformOrigin: 'center'}, "cross")
 
-function toggleNavbar() {
-    navBar.classList.toggle('active');
+function tmToggleActive() {
+    if (!timeline2.reversed()) {
+        navbarAddActive();
+    } else {
+        navbarRemoveActive();
+    }
+}
+
+function navbarAddActive() {
+    if (!navBar.classList.contains('active')) {
+        navBar.classList.add('active');
+    }
+}
+
+function navbarRemoveActive() {
+    navBar.classList.remove('active');
 }
 
 burger.addEventListener('click', ()=> {
     // toggleNavbar();
+    navbarRemoveActive();
 
     if(timeline1.isActive()) {
         timeline1.progress(1);
@@ -41,7 +56,7 @@ burger.addEventListener('click', ()=> {
 window.onscroll = ()=> {
     if (navBar.classList.contains('active') && burger.classList.contains('js-x')) {
         timeline2.reverse();
-        // navBar.classList.remove('active');
+        navbarRemoveActive();
         burger.classList.remove('js-x');
     }
 }

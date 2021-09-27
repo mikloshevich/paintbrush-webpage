@@ -151,6 +151,7 @@ address {
 }
 
 .burger {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.0);
     position: absolute;
     right: 0;
     top: 30%;
@@ -331,6 +332,11 @@ address {
 .about-img img {
     -webkit-clip-path: url(#about-clip);
     clip-path: url(#about-clip);
+    /* object-fit: contain; */
+    /* -webkit-mask-image: url('../images/border-about-mask.svg');
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center; */
 }
 
 .about-text {
@@ -351,6 +357,7 @@ address {
 }
 
 .drop {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.0);
     width: 20px;
     height: auto;
     cursor: pointer;
@@ -371,7 +378,8 @@ address {
     filter: drop-shadow(3px 3px 3px hsla(0, 0%, 0%, 0.5));
 }
 
-.drop-body:hover {
+.drop-body:hover,
+.drop-body:active {
     transform: scaleY(1.135);
 }
 
@@ -468,6 +476,7 @@ address {
 }
 
 .testimonial-btn {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.0);
     display: block;
     width: 63px;
     height: 63px;
@@ -716,14 +725,15 @@ address {
         filter: drop-shadow(0px 5px 15px hsla(0, 0%, 0%, 0.4));
 
         opacity: 0;
-        transform: scaleY(0);
-        transform-origin: top;
-        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        transform: scale(0) translate(-20%, -115%);
+        transform-origin: top right;
+        transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
     }
 
     .header nav.active {
+        transition-delay: 0s;
         opacity: 1;
-        transform: scaleY(1);
+        transform: scale(1) translate(0, 0);
     }
 
     .nav {
