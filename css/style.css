@@ -23,6 +23,7 @@ body {
     background-size: auto;
     overflow: hidden;
     transition: opacity 1s linear;
+    position: relative;
 }
 
 a {
@@ -82,13 +83,66 @@ address {
     z-index: -1;
     top: 0;
     left: 0;
-    background: url('../images/Background2-3-tiny.png');
-    background-color: #F0F0F0;
+    /* background: url('../images/Background2-3-tiny.png'); */
+    /* background-color: #F0F0F0; */
     background-repeat: repeat-y;
     background-position: center -80px;
-    background-size: auto;
+    background-size: cover;
     width: 100%;
     height: 100%;
+    filter: blur(4px);
+    opacity: 0.4;
+}
+
+.parallax {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.parallax img {
+    max-width: 300px;
+    position: absolute;
+    filter: blur(2px);
+}
+
+.parallax img:nth-child(1) {
+    bottom: 10%;
+    right: 0;
+}
+
+.parallax img:nth-child(2) {
+    bottom: 50%;
+    left: 0;
+}
+
+.parallax img:nth-child(3) {
+    bottom: 40%;
+    right: 0;
+}
+
+.parallax img:nth-child(4) {
+    top: 10%;
+    left: 0;
+}
+
+.parallax img:nth-child(5) {
+    top: 30%;
+    right: 0;
+}
+
+.parallax img:nth-child(6) {
+    top: 45%;
+    left: 10%;
+}
+
+.parallax img:nth-child(7) {
+    top: 0px;
+    right: 30%;
 }
 
 .header {
@@ -165,6 +219,10 @@ address {
     stroke: #121D28;
     width: 70px;
     /* height: 22px; */
+}
+
+.shadow {
+    filter: drop-shadow(3px 3px 2px hsla(0, 0%, 0%, 0.5));
 }
 
 .wave {
