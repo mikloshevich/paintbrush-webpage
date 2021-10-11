@@ -82,29 +82,12 @@ let aboutSlide;
 let drop;
 let aboutInterval;
 
-let mainBG = document.querySelector('.main-bg')
-
 let img = new Image();
 img.src = './images/Background2-3-tiny.png';
 img.onload = ()=> {
-    mainBG.style.backgroundImage = `url(${img.src})`;
     document.body.style.opacity = 1;
-    // document.body.style.backgroundImage = `url(${img.src})`;
+    document.body.style.backgroundImage = `url(${img.src})`;
 }
-
-let parallax = document.querySelectorAll('.parallax img')
-
-window.addEventListener('scroll', function() {
-    let offset = window.scrollY
-    // document.body.style.backgroundPosition = `center ${-offset}px`
-    mainBG.style.transform = `translateY(${-offset/10}px)`
-    parallax.forEach((e, i) => {
-        if (i % 2 !== 0) {
-            i = i * -1
-        }
-        e.style.transform = `translateY(${(-offset * i)/10}px) translateX(${(-offset * i)/20}px) rotate(${offset/10}deg) scale(${1 - offset/2000})`
-    })
-})
 
 window.addEventListener('load', function() {
     // document.body.style.opacity = 1;
